@@ -44,37 +44,47 @@
 						<h4 class="text-center text-primary">Add Employee Details</h4>
 
 						<form th:action="@{/insertEmployeeData}" method="post">
-						
+
 							<div class="form-group">
-								<label>Enter Employee Id</label> <input type="number"
-									class="form-control" name="id">
+							<br>
+								<label>Enter Employee Id</label> <input type="number" class="form-control" name="id">
 							</div>
 
 							<div class="form-group">
-								<label>Enter Name</label> <input type="text"
-									class="form-control" name="name">
+							<br>
+								<label>Enter Name</label> <input type="text" class="form-control" name="name">
 							</div>
 
 							<div class="form-group">
-								<label>Enter Address</label> <input type="text"
-									class="form-control" name="address">
+							<br>
+								<label>Enter Address</label> <input type="text" class="form-control" name="address">
 							</div>
 
 							<div class="form-group">
-								<label>Enter Gender</label> <input type="text"
-									class="form-control" name="gender">
+							<br>
+							<label>Enter Gender</label>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="gender"
+										id="inlineRadio1" value="male">
+									<label class="form-check-label" for="inlineRadio1">Male</label>
+								</div>
+								<div class="form-check form-check-inline">
+									<input class="form-check-input" type="radio" name="gender"
+										id="inlineRadio2" value="female">
+									<label class="form-check-label" for="inlineRadio2">Female</label>
+								</div>
 							</div>
 
 							<div class="form-group">
-								<label>Enter Salary</label> <input type="number"
-									class="form-control" name="salary">
+							<br>
+								<label>Enter Salary</label> <input type="number" class="form-control" name="salary">
 							</div>
-							
+
 							<div class="form-group">
-								<label>Enter Birthdate</label> <input type="date"
-									class="form-control" name="brithdate"
-									aria>
-									
+							<br>
+								<label>Enter Birthdate</label> <input type="date" class="form-control" name="birthdate"
+									aria-describedby="emailHelp" required>
+
 							</div>
 
 							<button class="btn btn-primary btn-block">Submit</button>

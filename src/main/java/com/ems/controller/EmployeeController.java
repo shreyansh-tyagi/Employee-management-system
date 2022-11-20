@@ -27,8 +27,7 @@ public class EmployeeController {
 	
 	@PostMapping("/insertEmployeeData")
 	public String empInsertData(@ModelAttribute Employee e) {
-		System.out.println(e);
 		service.addEmp(e);
-		return "redirect:/";
+		return "EmployeeIndex";
 	}
 }

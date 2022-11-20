@@ -23,7 +23,7 @@ public class Employee {
 	private String address;
 	private String gender;
 	private int salary;
-	private LocalDate birthdate;
+	private String birthdate;
 
 	public int getId() {
 		return id;
@@ -65,11 +65,11 @@ public class Employee {
 		this.salary = salary;
 	}
 
-	public LocalDate getBirthdate() {
+	public String getBirthdate() {
 		return birthdate;
 	}
 
-	public void setBirthdate(LocalDate birthdate) {
+	public void setBirthdate(String birthdate) {
 		this.birthdate = birthdate;
 	}
 
