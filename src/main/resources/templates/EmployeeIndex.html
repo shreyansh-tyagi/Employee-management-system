@@ -38,7 +38,7 @@
 
 	<div class="container p-5">
 		<table class="table table-striped">
-			<thead class= "bg-primary text-white">
+			<thead class="bg-primary text-white">
 				<tr>
 					<th scope="col">employeeId</th>
 					<th scope="col">Name</th>
@@ -46,32 +46,19 @@
 					<th scope="col">Gender</th>
 					<th scope="col">Salary</th>
 					<th scope="col">Birthday</th>
+					<th scope="col">Action</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<th scope="row">1</th>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">2</th>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
-				</tr>
-				<tr>
-					<th scope="row">3</th>
-					<td>Larry</td>
-					<td>the Bird</td>
-					<td>@twitter</td>
-					<td>@mdo</td>
-					<td>@mdo</td>
+				<tr th:each="e : ${emp}">
+					<th th:text="${e.id}">1</th>
+					<td th:text="${e.name}"></td>
+					<td th:text="${e.address}"></td>
+					<td th:text="${e.gender}"></td>
+					<td th:text="${e.salary}"></td>
+					<td th:text="${e.birthdate}"></td>
+					<td><a class="btn btn-sm btn-primary" th:href="@{/edit/{id}(id=${e.id})}">Edit</a> <a
+							class="btn btn-sm btn-danger" th:href="@{/delete/{id}(id=${e.id})}">Delete</a></td>
 				</tr>
 			</tbody>
 		</table>
