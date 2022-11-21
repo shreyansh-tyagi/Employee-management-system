@@ -24,7 +24,7 @@ public class EmployeeController {
 	@GetMapping("/home")
 	public String home(Model m) {
 		List<Employee> emp = service.getAllEmployee();
-		m.addAttribute("emp",emp);
+		m.addAttribute("emp", emp);
 		return "EmployeeIndex";
 	}
 
@@ -37,15 +37,29 @@ public class EmployeeController {
 	public String empInsertData(@ModelAttribute Employee e, HttpSession session) {
 		service.addEmp(e);
 		session.setAttribute("msg", "Employee Added successfully..");
-		return "AddEmployee";
+		return "redirect:/home";
 	}
-	
+
 	@GetMapping("edit/{id}")
 	public String edit(@PathVariable int id, Model m) {
-		
+
 		Employee e = service.getEmpById(id);
 		m.addAttribute("emp", e);
 		return "Add";
 	}
-	
+
+	@PostMapping("/update")
+	public String updateEmployee(@ModelAttribute Employee e, HttpSession session) {
+		service.addEmp(e);
+		session.setAttribute("msg", "Employee Details updated successfully..");
+		return "redirect:/home";
+	}
+
+	@GetMapping("delete/{id}")
+	public String deleteEmployee(@PathVariable int id, HttpSession session) {
+		service.deleteEmployeeById(id);
+		session.setAttribute("msg", "Employee Deleted successfully..");
+		return "redirect:/home";
+	}
+
 }
